@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+}
+
+#game-intro {
+    background-image: url("./Image/start-game.png");
+    background-size: cover;
+    width: 1000px;
+    height: 500px;
+    margin: 250px 450px;
+}
+
+#start-info {
+    text-align: center;
+    padding: 55px 400px 0px 0px;
+}
+
+#game-container {
+    display: flex;
+    justify-content: center;
+    width: 75vw;
+    padding: 20px 0px;
+}
+
+#game-screen {
+display: none;
+background-image: url("./Image/game-field.png");
+background-size: cover;
+overflow: hidden;
+position: relative;
+align-content: center;
+margin: 150px 0px 0px 500px;
+padding: 20px 0px;
+}
+
+#game-win {
+    display: none;
+    background-image: url("./Image/start-game.png");
+    background-size: cover;
+    width: 1000px;
+    height: 500px;
+    margin: 250px 450px;
+
+}
+
+#game-end {
+    display: none;
+    background-image: url("./Image/start-game.png");
+    background-size: cover;
+    width: 1000px;
+    height: 500px;
+    margin: 250px 450px;
+}
+
+body button {
+    font-size: 30px;
+    background-color: #FF004C;
+    color: #fff;
+    padding: 20px 40px;
+    border: 0;
+    box-shadow: 0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+    

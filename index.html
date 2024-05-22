@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Naughty Sheep</title>
+</head>
+<body>
+    <main>
+        <div id="game-intro" >
+            <div id="start-info">
+                <h1>Naughty Sheep</h1>
+                <button id="start-button">Start Game</button>
+                <p>Use the arrow keys on your keyboard to control the dog!</p>
+               
+                <div>
+                   <h2>States</h2>
+                   <p>Score: <span id="score">0</span></p>
+                   <p>Lives: <span id="lives">3</span></p>
+                </div>
+            </div>
+        </div>
+        <div id="game-container" >
+            <div id="scoreContainer" style="display: none;">
+                <h2>States</h2>
+                <p>Score: <span id="score">0</span></p>
+                <p>Lives: <span id="lives">3</span></p>
+             </div>
+            <div id="game-screen"></div>
+            
+        </div>
+        <div id="game-win" style=" text-align: center;
+        padding: 55px 400px 0px 0px;">
+    
+            <h1>Congratulations! <br> you won.....!!!</h1>
+            <button id="start-again-button">Start Game</button>
+        </div>
+        <div id="game-end" style=" text-align: center;
+        padding: 55px 400px 0px 0px;">
+            
+            <h1>Game Over</h1>
+            <br>
+            <button id="restart-button">Restart</button>
+        </div>
+    </main>
+
+    <script type="text/javascript"  src="./js/game.js"></script>
+    <script type="text/javascript"  src="./js/player.js"></script>
+    <script type="text/javascript"  src="./js/sheep.js"></script>
+    <script type="text/javascript"  src="./js/script.js"></script>
+    
+</body>
+</html>
