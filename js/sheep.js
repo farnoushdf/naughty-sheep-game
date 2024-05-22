@@ -9,7 +9,7 @@ class Sheep {
         this.width = 60;
         this.height = 60;
         this.element = document.createElement("img");
-        this.element.src = "../Image/sheep-shape.png";
+        this.element.src = "./Image/sheep-shape.png";
         this.element.style.position = "absolute";
         this.element.style.top = `${this.top}px`;
         this.element.style.left = `${this.left}px`;
