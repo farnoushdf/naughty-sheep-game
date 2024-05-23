@@ -2,7 +2,7 @@ class Sheep {
     constructor(gameScreen) {
         this.gameScreen = gameScreen;
         this.positionsLeftArr = [80, 140, 240, 290, 360, 470, 565, 420, 340, 510];
-        this.positionsTopArr = [470, 580, 640, 360, 580, 670, 475,420, 340, 510];
+        this.positionsTopArr = [470, 580, 640, 560, 580, 670, 475,420, 440, 510];
         this.randomIndex = Math.floor(Math.random() * this.positionsLeftArr.length);
         this.left = this.positionsLeftArr[this.randomIndex];
         this.top = this.positionsTopArr[this.randomIndex];
@@ -35,10 +35,10 @@ class Sheep {
         if (this.left <= 0) {
             this.directionX = 2;
         }
-        if (this.left > 600) {
+        if (this.left > 900) {
             this.directionX = -2;
         }
-        if (this.top < 300) {
+        if (this.top < 500) {
             this.directionY = 2;
         } 
         if ( this.top > 780) {
@@ -52,15 +52,15 @@ class Sheep {
         this.left += this.directionX;
         this.top += this.directionY;
         
-        if (this.left <= 0) {
+        if (this.left <= 200) {
             this.directionX = 2;
         }
-        if (this.left > 600) {
+        if (this.left > 400) {
             this.directionX = -2;
         }
-        if (this.top < 150) {
+        if (this.top < 200) {
             this.directionX = 2;
-            if (this.top < 260) {
+            if (this.top < 300) {
                 this.directionX = -2;
             }
         } 

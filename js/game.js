@@ -27,6 +27,7 @@ class Game {
         for (let i = 0; i < 15; i++) {
             this.sheep.push(new Sheep(this.gameScreen));
         }
+    
 
         this.gameIntervalId = setInterval(() => {
          
@@ -84,7 +85,7 @@ class Game {
             if (thereWasCollision) {
                 oneSheep.moveAfterCollision();
             }
-            if (oneSheep.top < 260) {
+            if (oneSheep.top < 400 && oneSheep.left > 310 && oneSheep.left < 450) {
                 this.sheep.splice(index, 1);
                 this.score +=1;
                 const scoreElement = document.getElementById ("score");

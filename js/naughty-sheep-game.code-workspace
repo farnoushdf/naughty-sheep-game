@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "naughty-sheep-game",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.multiRootWorkspaceName": "naughty-sheep-game"
+	}
+}

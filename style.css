@@ -24,7 +24,7 @@ body {
 
 #game-screen {
 display: none;
-background-image: url("./Image/game-field.png");
+background-image: url("./Image/game-field3.png");
 background-size: cover;
 overflow: hidden;
 position: relative;
