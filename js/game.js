@@ -11,9 +11,10 @@ class Game {
         this.score = 0;
         this.lives = 3;
         this.gameIsOver = false;
-        this.gameIntervalId = null;
+        this.gameIntervalId = null;  
         this.gameLoopFrequency = Math.round(1000/60);
-        this.timeRemaining = 5000;
+        this.timeRemaining = 120;
+        this.timeIntervalId = null;
     }
 
     start() {
@@ -28,13 +29,28 @@ class Game {
         }
 
         this.gameIntervalId = setInterval(() => {
+         
+           
+                this.gameLoop();
+            
+            
+        }, this.gameLoopFrequency);
+        this.timeIntervalId = setInterval(() => {
             this.timeRemaining -= 1;
             if (this.timeRemaining < 0) {
                 clearInterval(this.gameIntervalId);
                 this.gameOver();
             }
-            this.gameLoop();
-        }, this.gameLoopFrequency)
+            else {
+                const minutes = Math.floor(this.timeRemaining / 60).toString().padStart(2, "0");
+                const seconds = (this.timeRemaining % 60).toString().padStart(2, "0");
+                const timeRemainingContainer = document.getElementById("timeRemaining");
+                timeRemainingContainer.innerText = `${minutes}:${seconds}`;
+               
+            }
+
+        }, 1000);
+
     }
 
     gameLoop() {
@@ -86,11 +102,13 @@ class Game {
 
     gameWin() {
         this.gameScreen.style.display = "none";
+        this.gameEndScreen.style.display = "none";
         this.gameWinScreen.style.display = "block";
     }
      
     gameOver() {
          this.gameScreen.style.display = "none";
+         this.gameWinScreen.style.display = "none";
          this.gameEndScreen.style.display = "block";
      }
 }

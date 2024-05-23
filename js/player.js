@@ -21,6 +21,19 @@ class Player {
         this.left += this.directionX;
         this.top += this.directionY;
         console.log("player move")
+           
+        if (this.left <= 0) {
+          this.directionX = 1;
+      }
+      if (this.left > 850) {
+          this.directionX = -1;
+      }
+      // if (this.top < 600) {
+      //     this.directionX = 1;
+      // } 
+      if ( this.top > 780) {
+          this.directionY = -1;
+      }
         this.updatePosition();
     }
 

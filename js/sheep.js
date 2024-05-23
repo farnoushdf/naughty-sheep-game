@@ -1,8 +1,8 @@
 class Sheep {
     constructor(gameScreen) {
         this.gameScreen = gameScreen;
-        this.positionsLeftArr = [80, 140, 240, 290, 360, 470, 565];
-        this.positionsTopArr = [470, 580, 640, 360, 580, 670, 475];
+        this.positionsLeftArr = [80, 140, 240, 290, 360, 470, 565, 420, 340, 510];
+        this.positionsTopArr = [470, 580, 640, 360, 580, 670, 475,420, 340, 510];
         this.randomIndex = Math.floor(Math.random() * this.positionsLeftArr.length);
         this.left = this.positionsLeftArr[this.randomIndex];
         this.top = this.positionsTopArr[this.randomIndex];

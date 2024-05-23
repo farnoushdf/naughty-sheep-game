@@ -51,6 +51,17 @@ padding: 20px 0px;
     height: 500px;
     margin: 250px 450px;
 }
+.dog-feeling {
+    width: 180px;
+    height: 80px;
+    padding: 15px;
+    
+}
+.dog-happy {
+    width: 120px;
+    height: 120px;
+    padding: 85px;
+}
 
 body button {
     font-size: 30px;
