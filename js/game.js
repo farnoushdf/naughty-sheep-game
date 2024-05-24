@@ -15,6 +15,12 @@ class Game {
         this.gameLoopFrequency = Math.round(1000/60);
         this.timeRemaining = 120;
         this.timeIntervalId = null;
+        this.gameSound = new Audio("./Run-Amok(chosic.com).mp3");
+        this.gameSound.volume = 0.1;
+        this.gameOverSound = new Audio("./Fluffing-a-Duck(chosic.com).mp3");
+        this.gameOverSound.volume = 0.1;
+        this.gameWinSound = new Audio("./fm-freemusic-happy-and-joyful-children(chosic.com).mp3");
+        this.gameWinSound.volume = 0.1;
     }
 
     start() {
@@ -33,7 +39,7 @@ class Game {
          
            
                 this.gameLoop();
-            
+                this.gameSound.play();            
             
         }, this.gameLoopFrequency);
         this.timeIntervalId = setInterval(() => {
@@ -41,6 +47,8 @@ class Game {
             if (this.timeRemaining < 0) {
                 clearInterval(this.gameIntervalId);
                 this.gameOver();
+                this.gameSound.pause();
+                this.gameSound.currentTime = 0;
             }
             else {
                 const minutes = Math.floor(this.timeRemaining / 60).toString().padStart(2, "0");
@@ -90,6 +98,7 @@ class Game {
                 this.score +=1;
                 const scoreElement = document.getElementById ("score");
                 scoreElement.innerHTML = this.score;
+               
             
             }
            
@@ -97,6 +106,8 @@ class Game {
         //////////////
         if (this.sheep.length === 0) {
             this.gameWin();
+            this.gameSound.pause();
+            this.gameSound.currentTime = 0;
         }
         ////////////
     }
@@ -104,12 +115,15 @@ class Game {
     gameWin() {
         this.gameScreen.style.display = "none";
         this.gameEndScreen.style.display = "none";
+        this.gameWinSound.play();
         this.gameWinScreen.style.display = "block";
     }
      
     gameOver() {
          this.gameScreen.style.display = "none";
          this.gameWinScreen.style.display = "none";
+         this.gameOverSound.play();
          this.gameEndScreen.style.display = "block";
+         
      }
 }

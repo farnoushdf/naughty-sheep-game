@@ -2,6 +2,7 @@ window.onload = function () {
     const startButton = document.getElementById("start-button");
     const restartButton = document.getElementById("restart-button");
     const startAgainButton = document.getElementById("start-again-button");
+    
 
     let ourGame = new Game();
 
