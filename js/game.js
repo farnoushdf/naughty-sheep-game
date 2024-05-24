@@ -29,6 +29,10 @@ class Game {
         this.gameScreen.style.height = `${this.height}px`;
         this.startScreen.style.display = "none";
         this.gameScreen.style.display = "block";
+        this.gameOverSound.pause();
+        this.gameOverSound.currentTime = 0;
+        this.gameWinSound.pause();
+        this.gameWinSound.currentTime = 0;
 
         for (let i = 0; i < 15; i++) {
             this.sheep.push(new Sheep(this.gameScreen));
@@ -43,20 +47,22 @@ class Game {
             
         }, this.gameLoopFrequency);
         this.timeIntervalId = setInterval(() => {
-            this.timeRemaining -= 1;
-            if (this.timeRemaining < 0) {
-                clearInterval(this.gameIntervalId);
-                this.gameOver();
-                this.gameSound.pause();
-                this.gameSound.currentTime = 0;
+            if (this.sheep.length !== 0) {
+                this.timeRemaining -= 1;
+                if (this.timeRemaining < 0) {
+                    clearInterval(this.gameIntervalId);
+                    this.gameOver();
+                    this.gameSound.pause();
+                    this.gameSound.currentTime = 0;
+                }
+                else {
+                    const minutes = Math.floor(this.timeRemaining / 60).toString().padStart(1, "0");
+                    const seconds = (this.timeRemaining % 60).toString().padStart(1, "0");
+                    const timeRemainingContainer = document.getElementById("timeRemaining");
+                    timeRemainingContainer.innerText = `Remaining Time: ${minutes}:${seconds}`;
+                }
             }
-            else {
-                const minutes = Math.floor(this.timeRemaining / 60).toString().padStart(1, "0");
-                const seconds = (this.timeRemaining % 60).toString().padStart(1, "0");
-                const timeRemainingContainer = document.getElementById("timeRemaining");
-                timeRemainingContainer.innerText = `Remaining Time: ${minutes}:${seconds}`;
-               
-            }
+          
 
         }, 1000);
 
@@ -98,7 +104,7 @@ class Game {
                 this.score +=1;
                 const scoreElement = document.getElementById ("score");
                 scoreElement.innerHTML = this.score;
-               
+                
             
             }
            
@@ -124,6 +130,7 @@ class Game {
          this.gameWinScreen.style.display = "none";
          this.gameOverSound.play();
          this.gameEndScreen.style.display = "block";
+         
          
      }
 }
