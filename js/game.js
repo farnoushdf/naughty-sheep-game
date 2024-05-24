@@ -13,7 +13,7 @@ class Game {
         this.gameIsOver = false;
         this.gameIntervalId = null;  
         this.gameLoopFrequency = Math.round(1000/60);
-        this.timeRemaining = 120;
+        this.timeRemaining = 60;
         this.timeIntervalId = null;
         this.gameSound = new Audio("./Run-Amok(chosic.com).mp3");
         this.gameSound.volume = 0.1;
