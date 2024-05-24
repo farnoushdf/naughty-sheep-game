@@ -51,10 +51,10 @@ class Game {
                 this.gameSound.currentTime = 0;
             }
             else {
-                const minutes = Math.floor(this.timeRemaining / 60).toString().padStart(2, "0");
-                const seconds = (this.timeRemaining % 60).toString().padStart(2, "0");
+                const minutes = Math.floor(this.timeRemaining / 60).toString().padStart(1, "0");
+                const seconds = (this.timeRemaining % 60).toString().padStart(1, "0");
                 const timeRemainingContainer = document.getElementById("timeRemaining");
-                timeRemainingContainer.innerText = `${minutes}:${seconds}`;
+                timeRemainingContainer.innerText = `Remaining Time: ${minutes}:${seconds}`;
                
             }
 
